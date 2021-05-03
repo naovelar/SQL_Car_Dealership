@@ -56,12 +56,6 @@ CREATE TABLE product(
 	car_serial_id INTEGER NOT NULL
 	FOREIGN KEY(order_id) REFERENCES item_id(order_id),
 	FOREIGN KEY(car_serial_id) REFERENCES item_id(car_serial_id);
-  
--- inventory table layout --
-
-CREATE TABLE inventory(
-  	car_part_id SERIAL PRIMARY KEY,
-  	amount NUMERIC(8,2)
 	
 -- starte of values for above tables --
 	
@@ -214,31 +208,4 @@ INSERT INTO product(
 (	5,
 	'500.00',
 	'Windows',
-);
-
--- Insert into Service Ticket table
-INSERT INTO invoice(
-	invoice_id,
-	amount,
-	invoice_date,
-	salesperson_id,
-	customer_id,
-	service_id,
-	vin
-) VALUES(
-	1,
-	1000,
-	'01/22/1993',
-	1,
-	1,
-	100,
-	1010101010
-),
-(	2,
-	5000,
-	'05/29/1987',
-	2,
-	2,
-	200,
-	0101010101
 );
